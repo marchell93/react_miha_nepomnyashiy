@@ -1,10 +1,13 @@
 import React from "react";
 import { Book } from "./Book";
+import { Preloader } from "./Preloader";
 
 import "./App.css";
 
-const App = () => {
-  return (
+const App = (props) => {
+  return props.isLoading ? (
+    <Preloader />
+  ) : (
     <div>
       <Book name="JS" year="2018" price="1000" />
       <Book name="React" year="2020" price="5000" />
